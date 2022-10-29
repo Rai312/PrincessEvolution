@@ -8,8 +8,6 @@ public class Player : MonoBehaviour
 {
     private const int EvolutionStep = 1;
 
-    [SerializeField] private ParticleSystem _particleSystem;
-
     [SerializeField] private MouseInput _mouseInput;
     [SerializeField] private FinisherMover _finisherMover;
     [SerializeField] private MovementSystem _movementSystem;
@@ -50,7 +48,6 @@ public class Player : MonoBehaviour
 
     private void OnEnable()
     {
-        _collisionHandler.GateSelectionTaken += OnGateSelectionTaken;
         _collisionHandler.ItemTaken += OnItemTaken;
         _collisionHandler.GateTaken += OnGateTaken;
         _collisionHandler.EnemyTaken += OnEnemyTaken;
@@ -64,7 +61,6 @@ public class Player : MonoBehaviour
 
     private void OnDisable()
     {
-        _collisionHandler.GateSelectionTaken -= OnGateSelectionTaken;
         _collisionHandler.ItemTaken -= OnItemTaken;
         _collisionHandler.GateTaken -= OnGateTaken;
         _collisionHandler.EnemyTaken -= OnEnemyTaken;
@@ -80,11 +76,6 @@ public class Player : MonoBehaviour
     public event Action GameFailed;
     public event Action LevelEnded;
 
-    private void OnGateSelectionTaken(GateSelection gateSelection)
-    {
-        gateSelection.PlayAnimation();
-        gateSelection.enabled = false;
-    }
     private void OnItemTaken(Item item)
     {
         if ((int) item.Type > _evolution.Value)
@@ -128,7 +119,7 @@ public class Player : MonoBehaviour
     {
         if (EvolutionLevel == EraType.Monkey)
         {
-            _particleSystem.Play();
+            Finisher = finisher;
             GameFailed?.Invoke();
             return;
         }

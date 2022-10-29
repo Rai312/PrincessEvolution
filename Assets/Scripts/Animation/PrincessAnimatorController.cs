@@ -8,9 +8,9 @@ public class PrincessAnimatorController : MonoBehaviour
     private const string IsFinisher = nameof(IsFinisher);
     private const string IsEndLevel = nameof(IsEndLevel);
     private const string IsEvolution = nameof(IsEvolution);
+    //private const string IsInjuredRun = nameof(IsInjuredRun);
     private const string Speed = nameof(Speed);
     private const string Progress = nameof(Progress);
-    private const string IsChosen = nameof(IsChosen);
 
     private Animator Animator;
 
@@ -34,15 +34,6 @@ public class PrincessAnimatorController : MonoBehaviour
         Animator.SetFloat(Speed, speed);
     }
 
-    public void Choose()
-    {
-        Animator.SetBool(IsRun, false);
-        Animator.SetBool(IsIdle, false);
-        Animator.SetBool(IsFinisher, false);
-        Animator.SetBool(IsEndLevel, false);
-        Animator.SetBool(IsEvolution, false);
-        Animator.SetBool(IsChosen, true);
-    }
     public void Evolution()
     {
         Animator.SetBool(IsRun, false);
@@ -50,6 +41,7 @@ public class PrincessAnimatorController : MonoBehaviour
         Animator.SetBool(IsFinisher, false);
         Animator.SetBool(IsEndLevel, false);
         Animator.SetBool(IsEvolution, true);
+        //Animator.SetBool(IsInjuredRun, false);
     }
 
     public void Run()
@@ -59,7 +51,7 @@ public class PrincessAnimatorController : MonoBehaviour
         Animator.SetBool(IsFinisher, false);
         Animator.SetBool(IsEndLevel, false);
         Animator.SetBool(IsEvolution, false);
-        Animator.SetBool(IsChosen, false);
+        //Animator.SetBool(IsInjuredRun, false);
     }
 
     public void Idle()
@@ -69,6 +61,7 @@ public class PrincessAnimatorController : MonoBehaviour
         Animator.SetBool(IsFinisher, false);
         Animator.SetBool(IsEndLevel, false);
         Animator.SetBool(IsEvolution, false);
+        //Animator.SetBool(IsInjuredRun, false);
     }
 
     public void Finisher()
@@ -78,6 +71,7 @@ public class PrincessAnimatorController : MonoBehaviour
         Animator.SetBool(IsFinisher, true);
         Animator.SetBool(IsEndLevel, false);
         Animator.SetBool(IsEvolution, false);
+        //Animator.SetBool(IsInjuredRun, false);
     }
 
     public void EndLevel()
@@ -87,5 +81,16 @@ public class PrincessAnimatorController : MonoBehaviour
         Animator.SetBool(IsFinisher, false);
         Animator.SetBool(IsEndLevel, true);
         Animator.SetBool(IsEvolution, false);
+        //Animator.SetBool(IsInjuredRun, false);
     }
+
+    //public void InjuredRun()
+    //{
+    //    Animator.SetBool(IsRun, false);
+    //    Animator.SetBool(IsIdle, false);
+    //    Animator.SetBool(IsFinisher, false);
+    //    Animator.SetBool(IsEndLevel, false);
+    //    Animator.SetBool(IsEvolution, false);
+    //    Animator.SetBool(IsInjuredRun, true);
+    //}
 }

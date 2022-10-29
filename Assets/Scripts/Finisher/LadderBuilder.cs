@@ -6,6 +6,7 @@ public class LadderBuilder : MonoBehaviour
     [SerializeField] private CommonSector _commonSectorPrefab;
     [SerializeField] private SeparatingSector _separatingSectorPrefab;
     [SerializeField] private FinalSector _finalSectorPrefab;
+    [SerializeField] private FailSector _failSectorPrefab;
     [SerializeField] [Min(1)] private int _stepPrice;
     [SerializeField] private Material[] _sectorMaterials;
     [SerializeField] private GameObject _startPoint;
@@ -60,13 +61,18 @@ public class LadderBuilder : MonoBehaviour
     {
         for (var i = 0; i < _sectors.Count; i++)
         {
-            //if (_sectors[i] is CommonSector && i < _sectors.Count - 4)
-            if (_sectors[i] is CommonSector && i < _sectors.Count - 2)
+            if (_sectors[i] is CommonSector && i < _sectors.Count - 4)
             {
                 var sector = (CommonSector) _sectors[i];
                 sector.SpawnCoins();
             }
         }
+    }
+
+    public void CreateFail()
+    {
+        _spawnPoint = transform;
+        Spawn(_failSectorPrefab);
     }
 
     private T Spawn<T>(T sectorPrefab) where T : Sector

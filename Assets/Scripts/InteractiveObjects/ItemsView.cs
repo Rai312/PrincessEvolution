@@ -4,7 +4,7 @@ public class ItemsView : MonoBehaviour
 {
     private Parameter _evolution;
     private MaterialSwitcher[] _switchers;
-    private float _distanceToSwitchOn = 200f;
+    private float _distanceToSwitchOn = 135f;
 
     private int _valueAge;
 

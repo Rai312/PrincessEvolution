@@ -191,6 +191,7 @@ MonoBehaviour:
   _commonSectorPrefab: {fileID: 8643756659915377473, guid: 3723ba0a534c08e4b84a84c139ed3aeb, type: 3}
   _separatingSectorPrefab: {fileID: 4136529745113330278, guid: e1a3058fe3e0fc548b11848e64ad78bd, type: 3}
   _finalSectorPrefab: {fileID: 9036798035982817443, guid: 1b75a2dccd773eb40a14abc4b00e29c0, type: 3}
+  _failSectorPrefab: {fileID: 7035480567588111893, guid: 26357b2c02b88774caa8a8ebe93283d6, type: 3}
   _stepPrice: 25
   _sectorMaterials:
   - {fileID: 2100000, guid: 988cbf731f622d549836d7a26c0ad094, type: 2}

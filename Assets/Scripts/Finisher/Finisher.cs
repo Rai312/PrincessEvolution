@@ -20,12 +20,17 @@ public class Finisher : MonoBehaviour
         _finisherEvolution = new Parameter((int) EraType.Primeval);
     }
 
-
     public void ShowFinisher(Player player, Action ended)
     {
         _ladderBuilder.CreateLadderBy(player);
         StartCoroutine(Showing());
         StartCoroutine(Moving(player, _ladderBuilder.WayPoints,  ended));
+    }
+
+    public void ShowFail()
+    {
+        _ladderBuilder.CreateFail();
+        _ladderBuilder.Sectors[0].Show();
     }
 
     private IEnumerator Moving(Player player, IReadOnlyList<Vector3> wayPoints, Action stopped)

@@ -2957,7 +2957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bcd2f4f122e2d0547910889d9d6e4390, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1033457975694571078, guid: bcd2f4f122e2d0547910889d9d6e4390, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7898,8 +7898,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _linkedItemOfClothing:
-  - {fileID: 4575081733232585887}
   - {fileID: 1332835580}
+  - {fileID: 4575081733232585887}
   - {fileID: 4974329466088758813}
 --- !u!1001 &4974329466380215509
 PrefabInstance:

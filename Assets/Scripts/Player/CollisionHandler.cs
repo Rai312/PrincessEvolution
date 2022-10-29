@@ -13,12 +13,6 @@ public class CollisionHandler : MonoBehaviour
         var effectOfCollecting = other.GetComponentInParent<EffectOfCollecting>();
         var trapZone = other.GetComponentInParent<TrapZone>();
         var enemy = other.GetComponentInParent<Enemy>();
-        var gateSelection = other.GetComponent<GateSelection>();
-
-        if (gateSelection)
-        {
-            GateSelectionTaken?.Invoke(gateSelection);
-        }
 
         if (item)
         {
@@ -73,7 +67,6 @@ public class CollisionHandler : MonoBehaviour
         }
     }
 
-    public event Action<GateSelection> GateSelectionTaken;
     public event Action<Enemy> EnemyTaken;
     public event Action<Item> ItemTaken;
     public event Action<Gate> GateTaken;
